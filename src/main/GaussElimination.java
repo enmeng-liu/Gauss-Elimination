@@ -75,44 +75,5 @@ public class GaussElimination {
         }
         System.out.print(A);
     }
-
-
-    public static void manualGauss(Matrix A) {
-        System.out.println("Please choose your operation:");
-        System.out.println("0 -- quit manual mode");
-        System.out.println("1 -- exchange two rows");
-        System.out.println("2 -- multiply one row with a coefficient and add it to another");
-        System.out.println("3 -- change the pivot of one row to 1");
-        Scanner cin = new Scanner(System.in);
-        while (true) {
-            int mode = cin.nextInt();
-            switch (mode) {
-                case 0:
-                    cin.close();
-                    return;
-                case 1:
-                    System.out.println("Please input the two rows you want to exchange:");
-                    int i = cin.nextInt();
-                    int j = cin.nextInt();
-                    A.exchangeTwoRows(i, j);
-                    break;
-                case 2:
-                    System.out.println("Please input the source row and the coefficient:");
-                    int src = cin.nextInt();
-                    String inp = cin.next();
-                    Fraction cof = new Fraction(inp);
-                    System.out.println("Please input the target row:");
-                    int dst = cin.nextInt();
-                    A.addOneRowToAnother(src, dst, cof);
-                    break;
-                case 3:
-                    System.out.println("Please input the row whose pivot you want to change:");
-                    int x = cin.nextInt();
-                    A.changePivotToOne(x);
-                    break;
-                default:
-                    System.out.println("Please input a right command!");
-            }
-        }
-    }
+    
 }

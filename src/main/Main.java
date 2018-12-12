@@ -13,7 +13,7 @@ public class Main {
             //输入矩阵
             System.out.print("Please input the number of rows of your matrix:");
             String inp = "q";
-            if(scan.hasNext()) inp = scan.next();
+            inp = scan.next();
             if(inp.equals("q")) break;
             int rows = Integer.parseInt(inp);
             System.out.print("\nPlease input the number of columns of the left matrix:");
@@ -50,7 +50,45 @@ public class Main {
 
             //进行Gauss消元
             if(mode == 0) GaussElimination.autoGauss(m);
-            else GaussElimination.manualGauss(m);
+            else {
+                System.out.println("Please choose your operation:");
+                System.out.println("0 -- quit manual mode");
+                System.out.println("1 -- exchange two rows");
+                System.out.println("2 -- multiply one row with a coefficient and add it to another");
+                System.out.println("3 -- change the pivot of one row to 1");
+                //Scanner scan = new Scanner(System.in);
+                boolean flag = true;
+                while (flag) {
+                    mode = scan.nextInt();
+                    switch (mode) {
+                        case 0:
+                            flag = false;
+                            break;
+                        case 1:
+                            System.out.println("Please input the two rows you want to exchange:");
+                            int i = scan.nextInt();
+                            int j = scan.nextInt();
+                            m.exchangeTwoRows(i, j);
+                            break;
+                        case 2:
+                            System.out.println("Please input the source row and the coefficient:");
+                            int src = scan.nextInt();
+                            inp = scan.next();
+                            Fraction cof = new Fraction(inp);
+                            System.out.println("Please input the target row:");
+                            int dst = scan.nextInt();
+                            m.addOneRowToAnother(src, dst, cof);
+                            break;
+                        case 3:
+                            System.out.println("Please input the row whose pivot you want to change:");
+                            int x = scan.nextInt();
+                            m.changePivotToOne(x);
+                            break;
+                        default:
+                            System.out.println("Please input a right command!");
+                    }
+                }
+            }
 
         }
         scan.close();
