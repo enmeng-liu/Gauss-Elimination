@@ -115,6 +115,7 @@ public class Matrix {
             if (tempPivotColIndex == -1 || tempPivotColIndex <= pivotColIndex){
                 return false;
             }
+            pivotColIndex = tempPivotColIndex;
         }
         return true;
     }
