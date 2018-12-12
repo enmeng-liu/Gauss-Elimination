@@ -6,7 +6,7 @@ A java project for qlz's Linear Algebra
 
 ## 属性
 
-+ `int numberator`分子
++ `int numerator`分子
 + `int denominator` 分母
 
 ## 方法
@@ -27,7 +27,7 @@ A java project for qlz's Linear Algebra
 
 ## 方法
 
-+ `void exchange()` 交换某两行
++ `void exchangeTwoRows()` 交换某两行
 + `void addOneRowToAnother()` 将某行乘以一个系数以后加给另一行
 + `void oneRowMul()` 将某行乘以一个非零系数
 + `String toString()`  输出矩阵
