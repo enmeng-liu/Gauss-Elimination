@@ -159,7 +159,7 @@ public class Matrix {
                 elements.get(row).set(col, elements.get(row).get(col).div(pivotFrac));
             }
         }
-        System.out.println("change the pivot of row " + row + " to 1");
+        System.out.println("Divide all the elements in row " + row + " by " + pivotFrac.toString() + " and we change the pivot of row " + row + " to 1");
         System.out.println(this.toString());
     }
 
