@@ -61,6 +61,8 @@ public class Matrix {
             elements.get(row1).set(col, elements.get(row2).get(col));
             elements.get(row2).set(col, temp);
         }
+        System.out.println("exchange row " + row1 + " and row " + row2);
+        System.out.println(this.toString());
     }
 
     /**
@@ -74,6 +76,8 @@ public class Matrix {
             Fraction tempFrac = elements.get(srcRow).get(col).mul(frac);
             elements.get(dstRow).set(col, elements.get(dstRow).get(col).add(tempFrac));
         }
+        System.out.println("multiple row " + srcRow + " by " + frac + " and add it to row " + dstRow);
+        System.out.println(this.toString());
     }
 
     /**
@@ -155,6 +159,8 @@ public class Matrix {
                 elements.get(row).set(col, elements.get(row).get(col).div(pivotFrac));
             }
         }
+        System.out.println("change the pivot of row " + row + " to 1");
+        System.out.println(this.toString());
     }
 
     /**
