@@ -27,6 +27,11 @@ public class Fraction {
 		}
 		this.reduct();
 	}
+
+	public Fraction(int a){
+	    numberator = a;
+	    denominator = 1;
+    }
 	
 	public Fraction(int a, int b) {
 		numberator = a;
