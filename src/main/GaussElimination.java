@@ -44,7 +44,7 @@ public class GaussElimination {
             col++;
         }
 
-        System.out.print(A);
+        //System.out.print(A);
         //assert (false);
         /*至此，右下消元完成，开始左上消元 */
         /*-------------------------------------------------------------*/
@@ -75,5 +75,5 @@ public class GaussElimination {
         }
         System.out.print(A);
     }
-    
+
 }
