@@ -12,20 +12,25 @@ public class Main {
 
             //输入矩阵
             System.out.print("Please input the number of rows of your matrix:");
-            String inp;
-            inp = scan.next();
+            String inp = "q";
+            if(scan.hasNext()) inp = scan.next();
             if(inp.equals("q")) break;
             int rows = Integer.parseInt(inp);
             System.out.print("\nPlease input the number of columns of the left matrix:");
-            inp = scan.next();
+            if(scan.hasNext()) inp = scan.next();
+            else {
+                System.out.println("Bye!");
+                continue;
+            };
             int cols = Integer.parseInt(inp);
-            System.out.print("\nPlease input the number of totlw columns:");
-            inp = scan.next();
+            System.out.print("\nPlease input the number of total columns:");
+            if(scan.hasNext()) inp = scan.next();
+
             int total_cols = Integer.parseInt(inp);
             System.out.print("\nPlease input the " + rows + "*" + total_cols + " matrix:\n");
             for (int i = 0; i < rows; ++i) {
                 for (int j = 0; j < total_cols; ++j) {
-                    inp = scan.next();
+                    if(scan.hasNext()) inp = scan.next();
                     matrix.add(new Fraction(inp));
                 }
             }
@@ -33,7 +38,7 @@ public class Main {
 
 
             //输入模式
-            GaussElimination GE;
+            //GaussElimination GE;
 
             System.out.print("Please enter a number to choose you mode, "
                     + "0 for auto and 1 for manual.\n");
@@ -44,8 +49,8 @@ public class Main {
             }
 
             //进行Gauss消元
-            if(mode == 0) GE.autoGauss(m);
-            else GE.manualGauss(m);
+            if(mode == 0) GaussElimination.autoGauss(m);
+            else GaussElimination.manualGauss(m);
 
         }
         scan.close();

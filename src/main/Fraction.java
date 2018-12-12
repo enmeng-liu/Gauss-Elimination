@@ -1,8 +1,8 @@
 package main;
 
 public class Fraction {
-    int numberator;//分子
-    int denominator;//分母
+    public int numberator;//分子
+    public int denominator;//分母
 
     public Fraction(String inp) {
         inp.trim();//去除两端空格
@@ -34,6 +34,10 @@ public class Fraction {
     }
 
     private void reduct() {
+        if (denominator < 0){
+            denominator = -denominator;
+            numberator = -numberator;
+        }
         int tmp = (numberator > 0) ? numberator : -numberator;
         int m = gcd(tmp, denominator);
         this.numberator /= m;
@@ -73,6 +77,10 @@ public class Fraction {
     public boolean isZero() {
         if (this.numberator == 0) return true;
         else return false;
+    }
+
+    public boolean isOne() {
+        return this.numberator == this.denominator;
     }
 
     public String toString() {
